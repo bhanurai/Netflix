@@ -1,12 +1,13 @@
-
-
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:netflix/cubits/app_bar/app_bar/app_bar_cubit.dart';
+import 'package:netflix/data/data.dart';
+import '../widgets/widgets.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({required Key key}) : super(key: key);
-
+  const HomeScreen({Key? key}) : super(key: key);
   @override
-  _HomeScreenState createState() => _HomeScreenState();
+  State<HomeScreen> createState() => _HomeScreenState();
 }
 
 class _HomeScreenState extends State<HomeScreen> {
@@ -16,7 +17,7 @@ class _HomeScreenState extends State<HomeScreen> {
   void initState() {
     _scrollController = ScrollController()
       ..addListener(() {
-        context.bloc<AppBarCubit>().setOffset(_scrollController.offset);
+        context.read<AppBarCubit>().setOffset(_scrollController.offset);
       });
     super.initState();
   }
@@ -33,7 +34,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       extendBodyBehindAppBar: true,
       floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.grey[850],
+        backgroundColor: Colors.cyan,
         child: const Icon(Icons.cast),
         onPressed: () => print('Cast'),
       ),
@@ -43,49 +44,49 @@ class _HomeScreenState extends State<HomeScreen> {
           builder: (context, scrollOffset) {
             return CustomAppBar(scrollOffset: scrollOffset);
           },
-        ),
-      ),
+        ),      ),
       body: CustomScrollView(
         controller: _scrollController,
-        slivers: [
+        slivers: const [
           SliverToBoxAdapter(
-            child: ContentHeader(featuredContent: sintelContent),
+            child: ContentHeader(featuredContent: wednesdayContent),
           ),
           SliverPadding(
             padding: const EdgeInsets.only(top: 20.0),
             sliver: SliverToBoxAdapter(
               child: Previews(
+                title:'Previews',
                 key: PageStorageKey('previews'),
-                title: 'Previews',
-                contentList: previews,
+                contentList:previews,
               ),
             ),
           ),
           SliverToBoxAdapter(
             child: ContentList(
+              title:'My List',
               key: PageStorageKey('myList'),
-              title: 'My List',
-              contentList: myList,
+              contentList:myList,
             ),
           ),
           SliverToBoxAdapter(
             child: ContentList(
-              key: PageStorageKey('originals'),
-              title: 'Netflix Originals',
-              contentList: originals,
-              isOriginals: true,
+              title:'Netflix Originals',
+              key: PageStorageKey('orginals'),
+
+              contentList:originals,
+              isOriginals:true,
             ),
           ),
           SliverPadding(
-            padding: const EdgeInsets.only(bottom: 20.0),
+            padding:const EdgeInsets.only(bottom: 20.0),
             sliver: SliverToBoxAdapter(
               child: ContentList(
-                key: PageStorageKey('trending'),
-                title: 'Trending',
-                contentList: trending,
+                title:'Trending',
+                key: PageStorageKey('trendings'),
+                contentList:trending,
               ),
             ),
-          )
+          ),
         ],
       ),
     );
