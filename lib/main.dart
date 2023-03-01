@@ -55,7 +55,7 @@ void main() async {
                         visualDensity: VisualDensity.adaptivePlatformDensity,
                         scaffoldBackgroundColor: Colors.black,
                       ),
-                      initialRoute: "/home",
+                      initialRoute: "/LoadingScreen",
                       routes: {
                         "/LoadingScreen": (BuildContext context) =>
                             LoadingScreen(),

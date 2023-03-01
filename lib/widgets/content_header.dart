@@ -40,7 +40,7 @@ class _ContentHeaderMobileState extends State<_ContentHeaderMobile> {
   void initState() {
     super.initState();
     if (widget.featuredContent.videoUrl != null) {
-      _videoController = VideoPlayerController.network(widget.featuredContent.videoUrl!);
+      _videoController = VideoPlayerController.network(widget.featuredContent!.videoUrl!);
       _initializeVideoPlayerFuture = _videoController.initialize().then((_) {
         setState(() {});
       });
