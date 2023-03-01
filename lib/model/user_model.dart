@@ -1,4 +1,6 @@
+
 import 'dart:convert';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 UserModel? userModelFromJson(String str) => UserModel.fromJson(json.decode(str));
@@ -7,42 +9,47 @@ String userModelToJson(UserModel? data) => json.encode(data!.toJson());
 
 class UserModel {
   UserModel({
-    this.userId,
-    this.fcmToken,
-    this.name,
-    this.username,
-    this.phone,
+    required this.id,
+    this.user_id,
+    required this.username,
+    required this.email,
+    required this.phone,
+    required this.password,
   });
 
-  String? userId;
-  String? fcmToken;
-  String? name;
+  String? id;
+  String? user_id;
   String? username;
+  String? email;
   String? phone;
+  String? password;
+
+
 
   factory UserModel.fromJson(Map<String, dynamic> json) => UserModel(
-    userId: json["user_id"],
-    fcmToken: json["fcm_token"],
-    name: json["name"],
+    id: json["id"],
+    user_id: json["user_id"],
     username: json["username"],
-    phone: json["phone"],
+    email: json["email"],
+    phone: json["phoneNo"],
+    password: json["password"],
   );
-
-  factory UserModel.fromFirebaseSnapshot
-      (DocumentSnapshot<Map<String,dynamic>>json) => UserModel(
-    userId: json["user_id"],
-    fcmToken: json["fcm_token"],
-    name: json["name"],
-    username: json["username"],
-    phone: json["phone"],
-  );
-
 
   Map<String, dynamic> toJson() => {
-    "user_id": userId,
-    "fcm_token": fcmToken,
-    "name": name,
+    "id": id,
+    "user_id": user_id,
     "username": username,
-    "phone": phone,
+    "email": email,
+    "phoneNo": phone,
+    "password": password,
   };
+
+  factory UserModel.fromFirebaseSnapshot(DocumentSnapshot<Map<String, dynamic>> json) => UserModel(
+    id: json.id,
+    user_id: json["user_id"],
+    username: json["username"],
+    email: json["email"],
+    phone: json["phoneNo"],
+    password: json["password"],
+  );
 }
