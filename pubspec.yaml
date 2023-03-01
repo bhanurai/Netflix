@@ -65,6 +65,11 @@ dependencies:
   email_otp: ^1.0.4
   email_auth: ^1.0.0
   carousel_slider: ^4.2.1
+  flutter_localization: ^0.1.10
+  day_night_switcher: ^0.2.0+1
+
+
+
 
 dependency_overrides:
   device_info_plus: 3.2.1

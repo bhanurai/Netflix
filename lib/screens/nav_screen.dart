@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:netflix/cubits/app_bar/app_bar/app_bar_cubit.dart';
+import 'package:netflix/cubits/app_bar/app_bar_cubit.dart';
 import 'package:netflix/screens/home_screen.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:netflix/widgets/responsive.dart';

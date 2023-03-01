@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:netflix/cubits/app_bar/app_bar/app_bar_cubit.dart';
+import 'package:netflix/cubits/app_bar/app_bar_cubit.dart';
 import 'package:netflix/data/data.dart';
 import '../widgets/widgets.dart';
 
@@ -30,6 +30,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+
     final Size screenSize = MediaQuery.of(context).size;
     return Scaffold(
       extendBodyBehindAppBar: true,
@@ -44,7 +45,12 @@ class _HomeScreenState extends State<HomeScreen> {
           builder: (context, scrollOffset) {
             return CustomAppBar(scrollOffset: scrollOffset);
           },
-        ),      ),
+        ),
+      ),
+
+
+
+
       body: CustomScrollView(
         controller: _scrollController,
         slivers: const [
