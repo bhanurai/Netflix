@@ -34,7 +34,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       extendBodyBehindAppBar: true,
       floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.cyan,
+        backgroundColor: Colors.orangeAccent,
         child: const Icon(Icons.cast),
         onPressed: () => print('Cast'),
       ),
