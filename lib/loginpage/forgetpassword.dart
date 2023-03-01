@@ -61,7 +61,7 @@ class _ForgotScreenState extends State<ForgotScreen> {
                 Container(
                   width: double.infinity,
                   child: Image.asset(
-                    "assets/images/Logo.jpg",
+                    "assets/images/logo1.png",
                     height: 300,
                   ),
                 ),
@@ -71,7 +71,8 @@ class _ForgotScreenState extends State<ForgotScreen> {
                     child: Text(
                       'Enter your email and we will send you a password reset link.',
                       style: TextStyle(
-                        fontSize: 20,
+                        color: Colors.purple,
+                        fontSize: 15,
                       ),
                     ),
                   ),
@@ -84,7 +85,7 @@ class _ForgotScreenState extends State<ForgotScreen> {
                   child: Container(
                     height: 60,
                     decoration: BoxDecoration(
-                        color: const Color(0xffB4B4B4).withOpacity(0.6),
+                        color:Colors.redAccent.withOpacity(0.6),
                         borderRadius: BorderRadius.circular(30)),
                     child: Padding(
                       padding: EdgeInsets.only(left: 10),
@@ -110,22 +111,23 @@ class _ForgotScreenState extends State<ForgotScreen> {
                     onPressed: () {
                       passwordReset();
                     },
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(
+                    child: const Padding(
+                      padding: EdgeInsets.symmetric(
                           horizontal: 25, vertical: 15),
                       child: Text(
                         "Reset Password",
                         style: TextStyle(
+                          color: Colors.red,
                           fontWeight: FontWeight.bold,
                           fontSize: 20,
                         ),
                       ),
                     )),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 Container(
-                  margin: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                  margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
                   child: Row(
                     children: [
                       InkWell(
@@ -135,10 +137,10 @@ class _ForgotScreenState extends State<ForgotScreen> {
                             builder: (BuildContext context) => LoginScreens(),
                           ));
                         },
-                        child: Text(
+                        child: const Text(
                           "Back to login",
                           style: TextStyle(
-                              fontWeight: FontWeight.bold, color: Colors.black),
+                              fontWeight: FontWeight.bold, color: Colors.red),
                         ),
                       )
                     ],

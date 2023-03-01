@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:netflix/loginpage/register_screen.dart';
 import 'package:provider/provider.dart';
 
+import '../screens/home_screen.dart';
 import '../viewmodel/auth_view_model.dart';
 
 
@@ -35,9 +36,9 @@ class _LoginScreensState extends State<LoginScreens> {
       if (auth.user != null) {
         print("Login Sucessful");
         ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-            backgroundColor: Colors.green, content: Text("Login Sucessful")));
-        // Navigator.of(context)
-        //     .push(MaterialPageRoute(builder: (context) => Home()));
+            backgroundColor: Colors.purple, content: Text("Login Sucessful")));
+        Navigator.of(context)
+            .push(MaterialPageRoute(builder: (context) => HomeScreen()));
       }
     } catch (e) {
       ScaffoldMessenger.of(context)
@@ -58,7 +59,7 @@ class _LoginScreensState extends State<LoginScreens> {
                 Container(
                   padding: EdgeInsets.only(left: 40),
                   height: deviceHeight * 0.30,
-                  child: Image.asset('assets/images/home.jpg'),
+                  child: Image.asset('assets/images/logo.png'),
                 ),
                 Container(
                   height: deviceHeight * 0.75,
@@ -72,7 +73,7 @@ class _LoginScreensState extends State<LoginScreens> {
                         Container(
                           height: constraints.maxHeight * 0.12,
                           decoration: BoxDecoration(
-                              color: const Color(0xffB4B4B4).withOpacity(0.6),
+                              color:Colors.red.withOpacity(0.6),
                               borderRadius: BorderRadius.circular(30)),
                           child: Padding(
                             padding: EdgeInsets.only(left: 10),
@@ -96,7 +97,7 @@ class _LoginScreensState extends State<LoginScreens> {
                         Container(
                           height: constraints.maxHeight * 0.12,
                           decoration: BoxDecoration(
-                              color: const Color(0xffB4B4B4).withOpacity(0.6),
+                              color: Colors.red.withOpacity(0.6),
                               borderRadius: BorderRadius.circular(30)),
                           child: Padding(
                             padding: const EdgeInsets.only(left: 10),
@@ -121,7 +122,7 @@ class _LoginScreensState extends State<LoginScreens> {
                                         _isVisible
                                             ? Icons.visibility
                                             : Icons.visibility_off,
-                                        color: Colors.grey,
+                                        color: Colors.black,
                                       ),
                                     ),
                                     border: InputBorder.none,
@@ -154,6 +155,7 @@ class _LoginScreensState extends State<LoginScreens> {
                             child: const Text(
                               'Login',
                               style: TextStyle(
+                                color: Colors.red,
                                 fontWeight: FontWeight.bold,
                                 fontSize: 22,
                               ),
@@ -175,7 +177,7 @@ class _LoginScreensState extends State<LoginScreens> {
                                 },
                                 child: const Text(
                                   'Forgot Password?',
-                                  style: TextStyle(color: Colors.black),
+                                  style: TextStyle(color: Colors.red),
                                 ),
                               )
                             ],
@@ -188,14 +190,14 @@ class _LoginScreensState extends State<LoginScreens> {
                           text: TextSpan(
                             text: "Dont have account?    ",
                             style: const TextStyle(
-                              color: Colors.black,
+                              color: Colors.red,
                               fontSize: 18,
                             ),
                             children: [
                               TextSpan(
                                 text: "Sign Up",
                                 style: const TextStyle(
-                                  color: Colors.black,
+                                  color: Colors.red,
                                   fontWeight: FontWeight.bold,
                                   fontSize: 18,
                                 ),

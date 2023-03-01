@@ -12,11 +12,13 @@ import 'loginpage/register_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(
-  );
+  await Firebase.initializeApp();
+
+// void main() {
+// >>>>>>> homescreen
   runApp(MyApp());
 }
-
+//
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
@@ -43,10 +45,12 @@ class MyApp extends StatelessWidget {
             context.loaderOverlay.hide();
           }
           return MaterialApp(
-              title: 'Hunger Craving',
+              title: 'Netflix',
               debugShowCheckedModeBanner: false,
               theme: ThemeData(
                 primarySwatch: Colors.purple,
+                visualDensity: VisualDensity.adaptivePlatformDensity,
+                scaffoldBackgroundColor: Colors.black,
               ),
               initialRoute: "/LoadingScreen",
               routes: {
@@ -145,3 +149,18 @@ class MyApp extends StatelessWidget {
 //     );
 //   }
 // }
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       title: 'Netflix',
+//       debugShowCheckedModeBanner: false,
+//       theme: ThemeData(
+//         primarySwatch: Colors.purple,
+//         visualDensity: VisualDensity.adaptivePlatformDensity,
+//         scaffoldBackgroundColor: Colors.black,
+//       ),
+//       home:NavScreen(),
+//     );
+//   }
+// }
+// >>>>>>> homescreen

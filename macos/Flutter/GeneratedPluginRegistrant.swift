@@ -13,7 +13,7 @@ import firebase_database
 import firebase_messaging
 import firebase_storage
 import flutter_local_notifications
-import path_provider_macos
+import path_provider_foundation
 import shared_preferences_foundation
 
 func RegisterGeneratedPlugins(registry: FlutterPluginRegistry) {

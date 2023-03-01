@@ -82,7 +82,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   children: [
                     Container(
                       height: deviceHeight * 0.20,
-                      child: Image.asset('assets/images/Logo.jpg'),
+                      child: Image.asset('assets/images/logo1.png'),
                     ),
                     Container(
                       height: deviceHeight * 0.75,
@@ -206,7 +206,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               decoration: InputDecoration(
                                   prefixIcon: Icon(Icons.lock),
                                   filled: true,
-                                  fillColor: Colors.grey.shade50,
+                                  fillColor: Colors.white,
                                   hintText: ' Confirm password ',
                                   suffixIcon: IconButton(
                                     onPressed: () {
@@ -218,7 +218,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                       _isVisibleConfirm
                                           ? Icons.visibility
                                           : Icons.visibility_off,
-                                      color: Colors.grey,
+                                      color: Colors.black,
                                     ),
                                   ),
                                   border: OutlineInputBorder(
@@ -248,6 +248,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                 child: const Text(
                                   'Register Now',
                                   style: TextStyle(
+                                    color: Colors.red,
                                     fontWeight: FontWeight.bold,
                                     fontSize: 22,
                                   ),
@@ -258,14 +259,14 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               text: TextSpan(
                                 text: "Already have an account?   ",
                                 style: const TextStyle(
-                                  color: Colors.black,
+                                  color: Colors.red,
                                   fontSize: 18,
                                 ),
                                 children: [
                                   TextSpan(
                                     text: "Login",
                                     style: const TextStyle(
-                                      color: Colors.black,
+                                      color: Colors.red,
                                       fontWeight: FontWeight.bold,
                                       fontSize: 18,
                                     ),
